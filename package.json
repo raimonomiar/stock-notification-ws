@@ -1,0 +1,37 @@
+{
+  "name": "stock-notification-ws",
+  "version": "1.0.0",
+  "description": "A web socket to send data to the client on regular interval",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raimonomiar/stock-notification-ws.git"
+  },
+  "keywords": [
+    "stock"
+  ],
+  "author": "raimonomiar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raimonomiar/stock-notification-ws/issues"
+  },
+  "homepage": "https://github.com/raimonomiar/stock-notification-ws#readme",
+  "dependencies": {
+    "config": "^3.3.8",
+    "ws": "^8.11.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
