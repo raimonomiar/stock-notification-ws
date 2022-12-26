@@ -1,2 +1,2 @@
 # stock-notification-ws
-web socket to send the data to the client on regular interval
+Trying chatgpt generated code to build web socket that sends stocks data to the client on regular interval.
