@@ -22,4 +22,9 @@ webSocketServer.on('connection', async (ws) => {
   ws.on('close', () => {
     clearInterval(updateStockData);
   });
+
+  ws.on('error', (error) => {
+    clearInterval(updateStockData);
+    console.error(error);
+  });
 });

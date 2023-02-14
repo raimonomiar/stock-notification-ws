@@ -10,7 +10,14 @@ const {
   },
 } = config;
 
-// create a function to call post api to get stock
+/**
+ * Calls the stock market API to get stock information.
+ *
+ * @async
+ * @function getStock
+ * @returns {Promise<string>} A promise that resolves to a JSON string containing the stock information.
+ * @throws {Error} If there is an error calling the stock market API.
+ */
 const getStock = async () => {
   const response = await axios.post(url, {
     fromdate: '',
