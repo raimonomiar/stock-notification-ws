@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Server } = require('ws');
 const config = require('config');
-const { stockApi } = require('./apis');
+const { stockApi } = require('./api');
 
 const {
   constant: {
