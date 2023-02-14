@@ -1,7 +1,6 @@
 const sinon = require('sinon');
 const axios = require('axios');
-const chai = require('chai');
-const expect = chai.expect;
+const { expect } = require('chai');
 const config = require('config');
 const { getStock } = require('../../src/api/stock');
 
@@ -42,7 +41,7 @@ describe('getStock', () => {
       stockSymbol: '',
       offset,
       limit: pageLimit,
-    })).to.be.true;
+    })).to.equal(true);
     expect(result).to.be.a('string');
     expect(result).to.equal(JSON.stringify(mockData));
   });

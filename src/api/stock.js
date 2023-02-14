@@ -15,7 +15,8 @@ const {
  *
  * @async
  * @function getStock
- * @returns {Promise<string>} A promise that resolves to a JSON string containing the stock information.
+ * @returns {Promise<string>} A promise that resolves to a JSON string containing
+ * the stock information.
  * @throws {Error} If there is an error calling the stock market API.
  */
 const getStock = async () => {
