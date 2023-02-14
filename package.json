@@ -4,6 +4,8 @@
   "description": "A web socket to send data to the client on regular interval",
   "main": "src/index.js",
   "scripts": {
+    "start:dev": "export NODE_ENV=development && node src/index.js",
+    "start:prod": "export NODE_ENV=production && node src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -21,11 +23,12 @@
   },
   "homepage": "https://github.com/raimonomiar/stock-notification-ws#readme",
   "dependencies": {
+    "axios": "^1.2.5",
     "config": "^3.3.8",
-    "ws": "^8.11.0"
+    "ws": "^8.11.0",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
     "eslint": "^8.30.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",

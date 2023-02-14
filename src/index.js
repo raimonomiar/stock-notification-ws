@@ -1,5 +1,7 @@
-import { Server } from 'ws';
-import config from 'config';
+require('dotenv').config();
+const { Server } = require('ws');
+const config = require('config');
+const { stockApi } = require('./apis');
 
 const {
   constant: {
@@ -9,16 +11,12 @@ const {
     port,
   },
 } = config;
+const webSocketServer = new Server({ port });
+webSocketServer.on('connection', async (ws) => {
+  ws.send(await stockApi.getStock());
 
-const webSocketServer = Server(port);
-let stockData = 'TODO';
-
-webSocketServer.on('connection', (ws) => {
-  ws.send(stockData);
-
-  const updateStockData = setInterval(() => {
-    stockData = 'TODO Update';
-    ws.send(stockData);
+  const updateStockData = setInterval(async () => {
+    ws.send(await stockApi.getStock());
   }, DEFAULT_INTERVAL);
 
   ws.on('close', () => {
