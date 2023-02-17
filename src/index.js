@@ -11,10 +11,10 @@ const {
     port,
   },
 } = config;
+
 const webSocketServer = new Server({ port });
 webSocketServer.on('connection', async (ws) => {
   ws.send(await stockApi.getStock());
-
   const updateStockData = setInterval(async () => {
     ws.send(await stockApi.getStock());
   }, DEFAULT_INTERVAL);
@@ -28,3 +28,7 @@ webSocketServer.on('connection', async (ws) => {
     console.error(error);
   });
 });
+
+module.exports = {
+  webSocketServer,
+};

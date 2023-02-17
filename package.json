@@ -7,7 +7,8 @@
     "start:dev": "export NODE_ENV=development && node src/index.js",
     "start:prod": "export NODE_ENV=production && node src/index.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "mocha --timeout 10000 test --recursive"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "eslint-plugin-import": "^2.26.0",
     "mocha": "^10.2.0",
     "pre-commit": "^1.2.2",
+    "proxyquire": "^2.1.3",
     "sinon": "^15.0.1"
   },
   "pre-commit": [
